@@ -4,8 +4,6 @@ import { Statistics } from "components/Statistics/Statistics";
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
 import { Section } from "components/Section/Section";
 
-import '../FormFeedBack/FormFeedBack.css';
-
     
 export class FormFeedBack extends Component {
 

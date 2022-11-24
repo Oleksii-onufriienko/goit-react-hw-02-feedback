@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
+import '../FeedbackOptions/FeedbackOptions.css';
 
 export function FeedbackOptions({handleOnClick}) {
     
@@ -9,4 +12,8 @@ export function FeedbackOptions({handleOnClick}) {
            <button type="button" name='bad' onClick={handleOnClick}>Bad</button>
         </div>
     );
+}
+
+FeedbackOptions.propTypes = {
+    handleOnClick: PropTypes.func,
 }

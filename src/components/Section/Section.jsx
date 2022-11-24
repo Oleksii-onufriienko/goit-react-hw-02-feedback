@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 export function Section({title, children}) {
     return (
@@ -7,4 +8,8 @@ export function Section({title, children}) {
             {children}
         </section>
     );
+}
+
+Section.propTypes = {
+    title: PropTypes.string,
 }
