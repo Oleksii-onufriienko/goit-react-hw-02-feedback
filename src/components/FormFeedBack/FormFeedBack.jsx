@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Statistics } from "components/Statistics/Statistics";
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
 import { Section } from "components/Section/Section";
+import { Notification } from "components/Notification/Notification";
 
     
 export class FormFeedBack extends Component {
@@ -13,7 +14,6 @@ export class FormFeedBack extends Component {
       bad: 0
     }
     
-
     handleOnClick = (e) => { 
         this.setState(prevState => {
             return {
@@ -38,10 +38,11 @@ export class FormFeedBack extends Component {
                 <Section title={"Please leave feedback"}>
                     <FeedbackOptions handleOnClick={this.handleOnClick} />
                 </Section>
-                {this.countTotalFeedback() > 0 &&
+                {this.countTotalFeedback() > 0 ?
                     <Section title="Statistics">
                         <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()}/>
-                    </Section>
+                    </Section> :
+                    <Notification message={"There is no feedback"} />
                 }
             </>
         );
